@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDIO I PORTFOLIO 2024</title>
+    <style>
+        /* Reset basic styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Page background and centering */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        /* Slideshow container styling */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px; /* Agrandissement de 20% */
+            height: auto;
+            aspect-ratio: 1000 / 707;
+            overflow: hidden;
+        }
+
+        /* Slide image styling */
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.5s;
+        }
+
+        /* Display the first slide by default */
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Invisible button areas for navigation */
+        .left-half, .right-half {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .left-half {
+            left: 0;
+        }
+
+        .right-half {
+            right: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .slideshow-container {
+                max-width: 90%;
+                aspect-ratio: 1000 / 707;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slideshow-container">
+        <!-- Slide images -->
+        <img src="image1.jpg" class="slide active" alt="Image 1">
+        <img src="image2.jpg" class="slide" alt="Image 2">
+        <img src="image3.jpg" class="slide" alt="Image 3">
+        <img src="image4.jpg" class="slide" alt="Image 4">
+        <img src="image5.jpg" class="slide" alt="Image 5">
+        <img src="image6.jpg" class="slide" alt="Image 6">
+        <img src="image7.jpg" class="slide" alt="Image 7">
+        <img src="image8.jpg" class="slide" alt="Image 8">
+        <img src="image9.jpg" class="slide" alt="Image 9">
+        <img src="image10.jpg" class="slide" alt="Image 10">
+        <img src="image11.jpg" class="slide" alt="Image 11">
+        <img src="image12.jpg" class="slide" alt="Image 12">
+        <img src="image13.jpg" class="slide" alt="Image 13">
+        <img src="image14.jpg" class="slide" alt="Image 14">
+        <img src="image15.jpg" class="slide" alt="Image 15">
+        <img src="image16.jpg" class="slide" alt="Image 16">
+        <img src="image17.jpg" class="slide" alt="Image 17">
+        <img src="image18.jpg" class="slide" alt="Image 18">
+        <img src="image19.jpg" class="slide" alt="Image 19">
+        <img src="image20.jpg" class="slide" alt="Image 20">
+        <img src="image21.jpg" class="slide" alt="Image 21">
+        <img src="image22.jpg" class="slide" alt="Image 22">
+        <img src="image23.jpg" class="slide" alt="Image 23">
+        <img src="image24.jpg" class="slide" alt="Image 24">
+        <img src="image25.jpg" class="slide" alt="Image 25">
+
+        <!-- Clickable areas for navigation -->
+        <div class="left-half" onclick="changeSlide(-1)"></div>
+        <div class="right-half" onclick="changeSlide(1)"></div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        // Function to change slide based on direction
+        function changeSlide(direction) {
+            slides[slideIndex].classList.remove('active');
+            slideIndex = (slideIndex + direction + slides.length) % slides.length;
+            slides[slideIndex].classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
